@@ -1,7 +1,7 @@
-import { userConstants } from "../_constants";
-import { userService } from "../_services";
-import { alertActions } from "./";
-import { history } from "../_helpers";
+import { userConstants } from "../constants";
+import { userService } from "../services";
+import { alertActions } from ".";
+import { history } from "../helpers";
 
 export const userActions = {
   login,
@@ -82,13 +82,13 @@ function getAll() {
   };
 
   function request() {
-    return { type: userConstants.GETALL_REQUEST };
+    return { type: userConstants.GET_ALL_REQUEST };
   }
   function success(users) {
-    return { type: userConstants.GETALL_SUCCESS, users };
+    return { type: userConstants.GET_ALL_SUCCESS, users };
   }
   function failure(error) {
-    return { type: userConstants.GETALL_FAILURE, error };
+    return { type: userConstants.GET_ALL_FAILURE, error };
   }
 }
 
